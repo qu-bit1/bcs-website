@@ -1,9 +1,11 @@
-import NextLink from 'next/link';
+import NextImage from "next/image"
+// import NextLink from 'next/link';
+import Link from "next/link"
 import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
-import HeroIllustration from 'components/HeroIllustation';
+// import HeroIllustration from 'components/HeroIllustation';
 import OverTitle from 'components/OverTitle';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
@@ -14,25 +16,27 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        <CustomOverTitle>IIT Kanpur</CustomOverTitle>
+        <Heading>Brain and Cognitive Society</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+        The Brain & Cognitive Society is a student society at IIT Kanpur. We aim at studying Brain Science to reverse 
+        engineer human intelligence to create more general and intelligent AI's for the future world. 
         </Description>
         <CustomButtonGroup>
-          <Button onClick={() => setIsModalOpened(true)}>
-            Subscribe to the newsletter <span>&rarr;</span>
-          </Button>
-          <NextLink href="#whitepaper" passHref>
-            <Button transparent>
-              Features <span>&rarr;</span>
-            </Button>
-          </NextLink>
+        <Link href="/projects" passHref>
+						<Button>
+              Our Projects <span>&rarr;</span>
+						</Button>
+					</Link>
+					<a target="_blank" rel="noopener noreferrer" href="/people">
+						<Button transparent>
+              People <span>&rarr;</span>
+						</Button>
+					</a>
         </CustomButtonGroup>
       </Contents>
       <ImageContainer>
-        <HeroIllustration />
+        <NextImage id = "logo" src= "/logo.png"  layout = "fill" objectFit="contain" />
       </ImageContainer>
     </HeroWrapper>
   );
@@ -63,23 +67,33 @@ const CustomButtonGroup = styled(ButtonGroup)`
 `;
 
 const ImageContainer = styled.div`
-  display: flex;
   flex: 1;
-  justify-content: flex-end;
-  align-items: flex-start;
+  max-width: 41.3%;
+  position: relative;
+  left: 15rem;
+  border-radius: 50%;
+  overflow: hidden;
+  aspect-ratio: 1/1;
 
-  svg {
-    max-width: 45rem;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: calc((9 / 16) * 100%);
   }
 
-  ${media('<=desktop')} {
+  ${media("<=desktop")} {
     margin-top: 2rem;
     justify-content: center;
-    svg {
-      max-width: 80%;
-    }
+    align-items: center;
+    max-width: 100%;
+    left: 0;
+    width: 100vw;
+    border-radius: 0;
+    aspect-ratio: unset;
   }
-`;
+`
+
 
 const Description = styled.p`
   font-size: 1.8rem;

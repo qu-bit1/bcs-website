@@ -1,7 +1,6 @@
-export default function Logo({ ...rest }) {
-	return (
-		<svg id="Layer_2" width="300" height="60" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.95 40.37">
-			<path fill="#2F2E2E" opacity="1.000000" stroke="none" 
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<path fill="#2F2E2E" opacity="1.000000" stroke="none" 
 	d="
 M264.000000,501.000000 
 	C176.000015,501.000000 88.500038,501.000000 1.000047,501.000000 
@@ -1264,7 +1263,4 @@ M195.782944,347.967407
 	C197.683533,354.580658 196.389816,354.650635 194.586945,354.748169 
 	C195.030380,352.234985 195.371841,350.299652 195.782944,347.967407 
 z"/>
-		</svg>
-
-	)
-}
+</svg>
